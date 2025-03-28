@@ -1,5 +1,9 @@
-import Welcome from "./welcone";
+import BasicButton from '../../components/BasicButton';
 
-export default function App() {
-  return <Welcome />;
+
+import { Redirect } from 'expo-router';
+
+export default function Index() {
+  return <Redirect href="/welcome" />;
+
 }
