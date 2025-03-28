@@ -1,8 +1,5 @@
-import Welcome from './welcone'
-
+import Welcome from "./welcone";
 
 export default function App() {
-  return (
-    <Welcome />
-  );
+  return <Welcome />;
 }

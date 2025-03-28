@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import BasicButtom from '../../components/BasicButtom';
 import BasicInput from '../../components/BasicInput';
@@ -7,19 +7,27 @@ import BasicInput from '../../components/BasicInput';
 const Welcome = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome</Text>
-      <BasicButtom
-        title="Entrar"
-        color="#28a745"
-        textColor="#fff"
-        
+      <Image style={styles.logo}
+        source={require('../../assets/images/icon.png')}
       />
-      <BasicInput
-        placeholder="Digite seu E-Mail"/>
-        value="email"
+      <View style={styles.inputContainer}>
         <BasicInput
-        placeholder="Digite sua Senha"/>
-        value="senha"
+          placeholder="E-Mail" />
+        <BasicInput
+          placeholder="Senha" />
+        <TouchableOpacity style={styles.forgotPasswordButtom}>
+          <Text style={styles.forgotPasswordText}>Esqueci a senha</Text>
+        </TouchableOpacity>
+      <View style={styles.buttomContainer}>
+        <BasicButtom
+          title="Entrar"
+          color="#BCE5FA"
+          textColor="#fff"
+          width="265"
+          height="45"
+        />
+      </View>
+      </View>
     </View>
   );
 };

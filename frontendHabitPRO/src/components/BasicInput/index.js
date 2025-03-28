@@ -1,8 +1,12 @@
-// components/CustomInput.js
-import React from 'react';
-import { TextInput, StyleSheet } from 'react-native';
+import React from "react";
+import { TextInput, StyleSheet } from "react-native";
 
-const CustomInput = ({ value, onChangeText, placeholder, secureTextEntry = false }) => {
+const CustomInput = ({
+  value,
+  onChangeText,
+  placeholder,
+  secureTextEntry = false,
+}) => {
   return (
     <TextInput
       style={styles.input}
@@ -16,10 +20,12 @@ const CustomInput = ({ value, onChangeText, placeholder, secureTextEntry = false
 
 const styles = StyleSheet.create({
   input: {
-    height: 40,
-    borderColor: '#ccc',
+    backgroundColor: "#BCE5FA",
+    width: 265,
+    height: 45,
+    borderColor: "#A0D2EB",
     borderWidth: 1,
-    borderRadius: 5,
+    borderRadius: 20,
     paddingLeft: 10,
     marginBottom: 20,
   },
