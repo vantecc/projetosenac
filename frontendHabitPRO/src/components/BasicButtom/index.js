@@ -28,10 +28,12 @@ const styles = StyleSheet.create({
     padding: 5,
     alignItems: "center",
     justifyContent: "center",
+    boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.1)', 
   },
   buttonText: {
     fontSize: 24,
     fontWeight: "bold",
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)', 
   },
 });
 
