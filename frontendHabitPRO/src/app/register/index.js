@@ -1,13 +1,44 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import styles from './styles';
+import React from "react";
+import { View, Text, ImageBackground } from "react-native";
+import styles from "./styles";
+import BasicButtom from "../../components/BasicButtom";
+import BasicInput from "../../components/BasicInput";
 
-const Register = () => {
+const Welcome = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Register</Text>
-    </View>
+    <ImageBackground
+      source={require("../../assets/images/image.png")}
+      style={styles.container}
+    >
+      <Text style={styles.textTitle}>Cadastre-se</Text>
+      <View style={styles.inputContainer}>
+        <BasicInput
+          placeholder="Nome"
+          backgroundColor="#FFF"
+          borderColor="#80DEEA"
+        />
+        <BasicInput
+          placeholder="E-Mail"
+          backgroundColor="#FFF"
+          borderColor="#80DEEA"
+        />
+        <BasicInput
+          placeholder="Senha"
+          backgroundColor="#FFF"
+          borderColor="#80DEEA"
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <BasicButtom
+          title="Criar Conta"
+          color="#BCE5FA"
+          textColor="#fff"
+          width={265}
+          height={45}
+        />
+      </View>
+    </ImageBackground>
   );
 };
 
-export default Register;
+export default Welcome;
