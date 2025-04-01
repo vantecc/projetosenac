@@ -1,26 +1,38 @@
+import { useRouter } from 'expo-router';
 import { View, Text } from 'react-native';
-import { Link } from 'expo-router';
-import BasicButton from '../../components/BasicButton/index.js';
-
+import BasicButton from '../../components/BasicButton'; // ou CustomButton, se for o nome real
 import styles from './styles';
 
 export default function Welcome() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
-      <Text style={styles.logo}>HabitPRO</Text>
+      <Text style={styles.logo}>
+        Habit<Text style={styles.logoBold}>PRO</Text>
+      </Text>
 
       <Text style={styles.slogan}>
         Construa hábitos, transforme sua rotina.
       </Text>
 
-      <Link href="/login" asChild>
-        <BasicButton title="Entrar" />
-      </Link>
+      <BasicButton
+        title="Entrar"
+        width={265}
+        height={45}
+        color="#A0D2EB"
+        textColor="#fff"
+        onPress={() => router.push('/login')}
+      />
 
-      <Link href="/register" asChild>
-        <BasicButton title="Criar Conta" variant="outline" />
-      </Link>
+      <BasicButton
+        title="Criar Conta"
+        width={265}
+        height={45}
+        color="#A0D2EB"
+        textColor="#fff"
+        onPress={() => router.push('/register')}
+      />
     </View>
   );
 }
-
