@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import styles from './styles';
-import BasicButtom from '../../components/BasicButton';
+import BasicButton from '../../components/BasicButton';
 import BasicInput from '../../components/BasicInput';
 
 const Welcome = () => {
@@ -19,7 +19,7 @@ const Welcome = () => {
           <Text style={styles.forgotPasswordText}>Esqueci a senha</Text>
         </TouchableOpacity>
       <View style={styles.buttomContainer}>
-        <BasicButtom
+        <BasicButton
           title="Entrar"
           color="#BCE5FA"
           textColor="#fff"

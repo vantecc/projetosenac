@@ -4,7 +4,7 @@ import styles from "./styles";
 import BasicButton from "../../components/BasicButton";
 import BasicInput from "../../components/BasicInput";
 
-const Welcome = () => {
+const Register = () => {
   return (
     <ImageBackground
       source={require("../../assets/images/image.png")}
@@ -41,4 +41,4 @@ const Welcome = () => {
   );
 };
 
-export default Welcome;
+export default Register;
