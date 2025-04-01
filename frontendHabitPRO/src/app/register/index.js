@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, ImageBackground } from "react-native";
 import styles from "./styles";
-import BasicButtom from "../../components/BasicButtom";
+import BasicButton from "../../components/BasicButton";
 import BasicInput from "../../components/BasicInput";
 
 const Welcome = () => {
@@ -29,7 +29,7 @@ const Welcome = () => {
         />
       </View>
       <View style={styles.buttonContainer}>
-        <BasicButtom
+        <BasicButton
           title="Criar Conta"
           color="#BCE5FA"
           textColor="#fff"
