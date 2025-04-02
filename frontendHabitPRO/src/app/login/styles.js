@@ -16,9 +16,11 @@ export default StyleSheet.create({
   inputContainer: {
     flex: 0.6,
   },
-  forgotPasswordButtom: {
+  forgotPasswordButton: {
     flexDirection: "row-reverse",
     marginHorizontal: "10",
+    marginBottom: 20,
+    marginTop: -15,
   },
   forgotPasswordText: {
     color: "#7D7777",

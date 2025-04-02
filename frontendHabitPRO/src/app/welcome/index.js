@@ -1,20 +1,68 @@
 import { useRouter } from 'expo-router';
-import { View, Text } from 'react-native';
-import BasicButton from '../../components/BasicButton'; // ou CustomButton, se for o nome real
+import React, {useEffect, useRef} from 'react';
+import { View, Text, Image, Animated,} from 'react-native';
+import BasicButton from '../../components/BasicButton';
 import styles from './styles';
+
+
 
 export default function Welcome() {
   const router = useRouter();
 
+
+  const colorAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(colorAnim, {
+          toValue: 1,
+          duration: 3000,
+          useNativeDriver: false,
+        }),
+        Animated.timing(colorAnim, {
+          toValue: 2,
+          duration: 3000,
+          useNativeDriver: false,
+        }),
+        Animated.timing(colorAnim, {
+          toValue: 0,
+          duration: 3000,
+          useNativeDriver: false,
+        }),
+      ])
+    ).start();
+  }, []);
+  
+  const animatedColor = colorAnim.interpolate({
+    inputRange: [0, 1, 2],
+    outputRange: ['#95e677', '#A0D2EB', '#FAD02C'], // verde, azul, amarelo
+  });
+  
+  
+
   return (
     <View style={styles.container}>
-      <Text style={styles.logo}>
-        Habit<Text style={styles.logoBold}>PRO</Text>
-      </Text>
+    <Image
+      source={require('../../assets/images/icon.png')}
+      style={styles.logo}
+    />
+  <Animated.Text
+  style={[
+    styles.slogan,
+    {
+      fontWeight: 'bold',
+      color: animatedColor,
+      textAlign: 'center',
+    },
+  ]}
+>
+  Construa hábitos, transforme sua rotina.
+</Animated.Text>
 
-      <Text style={styles.slogan}>
-        Construa hábitos, transforme sua rotina.
-      </Text>
+
+
+
 
       <BasicButton
         title="Entrar"
@@ -32,6 +80,7 @@ export default function Welcome() {
         color="#A0D2EB"
         textColor="#fff"
         onPress={() => router.push('/register')}
+        style={{ marginTop: 16 }}
       />
     </View>
   );

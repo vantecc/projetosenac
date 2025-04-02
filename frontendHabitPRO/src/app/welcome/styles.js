@@ -24,4 +24,22 @@ export default StyleSheet.create({
     marginVertical: 20,
     textAlign: 'center',
   },
+
+  logo: {
+    width: 380,
+    height: 195,
+    margin: 20,
+    flex: 0.5,
+  },
+
+  slogan: {
+    color: "blue",
+    fontSize: 16,
+    marginVertical: 20,
+    textAlign: "center",
+    marginTop: -100,
+    marginBottom: 150,
+  },
+  
+  
 });

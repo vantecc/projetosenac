@@ -6,11 +6,12 @@ const CustomInput = ({
   onChangeText,
   placeholder,
   secureTextEntry = false,
-  backgroundColor = "#BCE5FA",  // cor de fundo padrão
-  borderColor = "#A0D2EB",  // cor da borda padrão
-  borderRadius = 20,  // borda arredondada padrão
-  width = 265,  // largura padrão
-  height = 45,  // altura padrão
+  backgroundColor = "#BCE5FA",
+  borderColor = "#A0D2EB",
+  borderRadius = 20,
+  width = 265,
+  height = 45,
+  placeholderTextColor = "#B0B0B0",
 }) => {
   return (
     <TextInput
@@ -22,11 +23,12 @@ const CustomInput = ({
           width,
           height,
           borderRadius,
-        }
+        },
       ]}
       value={value}
       onChangeText={onChangeText}
       placeholder={placeholder}
+      placeholderTextColor={placeholderTextColor} // ✅ aqui você usa!
       secureTextEntry={secureTextEntry}
     />
   );
@@ -37,7 +39,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     paddingLeft: 25,
     marginBottom: 20,
-    boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.1)', 
+    boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.1)',
   },
 });
 
