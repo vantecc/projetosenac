@@ -82,21 +82,19 @@ const Register = () => {
                 value={name}
                 onChangeText={setName}
                 backgroundColor="#FFF"
-                borderColor="#80DEEA"
+
               />
               <BasicInput
                 placeholder="Email"
                 value={email}
                 onChangeText={setEmail}
                 backgroundColor="#FFF"
-                borderColor="#80DEEA"
               />
               <BasicInput
                 placeholder="Confirmar Email"
                 value={confirmEmail}
                 onChangeText={setConfirmEmail}
                 backgroundColor="#FFF"
-                borderColor="#80DEEA"
               />
               <BasicInput
                 placeholder="Senha"
@@ -104,7 +102,6 @@ const Register = () => {
                 value={password}
                 onChangeText={setPassword}
                 backgroundColor="#FFF"
-                borderColor="#80DEEA"
               />
               <BasicInput
                 placeholder="Confirmar Senha"
@@ -112,14 +109,11 @@ const Register = () => {
                 value={confirmPassword}
                 onChangeText={setConfirmPassword}
                 backgroundColor="#FFF"
-                borderColor="#80DEEA"
               />
             </View>
             <View style={styles.buttonContainer}>
               <BasicButton
                 title="Criar Conta"
-                color="#BCE5FA"
-                textColor="#fff"
                 width={265}
                 height={45}
                 onPress={handleRegister}

@@ -58,7 +58,6 @@ const Login = () => {
                 value={email}
                 onChangeText={setEmail}
                 backgroundColor="#FFF"
-                borderColor="#80DEEA"
               />
               <BasicInput
                 placeholder="Senha"
@@ -66,7 +65,6 @@ const Login = () => {
                 value={password}
                 onChangeText={setPassword}
                 backgroundColor="#FFF"
-                borderColor="#80DEEA"
               />
               <TouchableOpacity style={styles.forgotPasswordButton}>
                 <Text style={styles.forgotPasswordText}>Esqueci a senha</Text>
@@ -75,7 +73,6 @@ const Login = () => {
             <View style={styles.buttomContainer}>
               <BasicButton
                 title="Entrar"
-                color="#BCE5FA"
                 textColor="#fff"
                 width={265}
                 height={45}

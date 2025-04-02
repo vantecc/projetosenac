@@ -1,6 +1,6 @@
 import { useRouter } from 'expo-router';
 import React, {useEffect, useRef} from 'react';
-import { View, Text, Image, Animated,} from 'react-native';
+import { View, Image, Animated,} from 'react-native';
 import BasicButton from '../../components/BasicButton';
 import styles from './styles';
 
@@ -68,7 +68,6 @@ export default function Welcome() {
         title="Entrar"
         width={265}
         height={45}
-        color="#A0D2EB"
         textColor="#fff"
         onPress={() => router.push('/login')}
       />
@@ -77,7 +76,6 @@ export default function Welcome() {
         title="Criar Conta"
         width={265}
         height={45}
-        color="#A0D2EB"
         textColor="#fff"
         onPress={() => router.push('/register')}
         style={{ marginTop: 16 }}

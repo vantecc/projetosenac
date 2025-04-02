@@ -20,11 +20,13 @@ export default StyleSheet.create({
     gap: 15,
     width: "100%",
   },
-  textTitle: {
-    color: "#fff",
-    fontSize: 50,
-    marginBottom: 20,
-    flex: 0.5,
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
-  },
+    textTitle: {
+      color: "#fff",
+      fontSize: 40,
+      marginBottom: 20,
+      flex: 0.5,
+      textShadowColor: 'rgba(0, 0, 0, 0.2)',
+      textShadowOffset: { width: 2, height: 2 },
+      textShadowRadius: 4,
+    },
 });

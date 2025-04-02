@@ -6,8 +6,8 @@ const BasicButton = ({
   width,
   onPress,
   height,
-  color = "#007bff",
-  textColor = "#fff",
+  color = "#5EC9FA",
+  textColor = "#FFF",
   style,
 }) => {
   return (
@@ -16,7 +16,7 @@ const BasicButton = ({
       style={[
         styles.button,
         { backgroundColor: color, width, height },
-        style // 👈 necessário
+        style
       ]}
     >
       <Text style={[styles.buttonText, { color: textColor }]}>{title}</Text>
@@ -30,6 +30,11 @@ const styles = StyleSheet.create({
     padding: 5,
     alignItems: "center",
     justifyContent: "center",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    elevation: 6,
   },
   buttonText: {
     fontSize: 24,

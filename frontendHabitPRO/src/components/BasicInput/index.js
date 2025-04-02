@@ -7,7 +7,7 @@ const CustomInput = ({
   placeholder,
   secureTextEntry = false,
   backgroundColor = "#BCE5FA",
-  borderColor = "#A0D2EB",
+  borderColor = "#5EC9FA",
   borderRadius = 20,
   width = 265,
   height = 45,
@@ -28,7 +28,7 @@ const CustomInput = ({
       value={value}
       onChangeText={onChangeText}
       placeholder={placeholder}
-      placeholderTextColor={placeholderTextColor} // ✅ aqui você usa!
+      placeholderTextColor={placeholderTextColor}
       secureTextEntry={secureTextEntry}
     />
   );
@@ -39,7 +39,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     paddingLeft: 25,
     marginBottom: 20,
-    boxShadow: '4px 4px 10px rgba(0, 0, 0, 0.1)',
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    elevation: 6,
   },
 });
 
