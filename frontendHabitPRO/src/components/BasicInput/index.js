@@ -36,7 +36,7 @@ const CustomInput = ({
 
 const styles = StyleSheet.create({
   input: {
-    borderWidth: 1,
+    borderWidth: 3,
     paddingLeft: 25,
     marginBottom: 20,
     shadowColor: "#000",

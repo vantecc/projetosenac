@@ -2,8 +2,8 @@ import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
 const DaySelector = ({
-  selectedDays = [],  // Recebe os dias selecionados do componente pai
-  onSelectDay,       // Recebe a função onSelectDay do componente pai
+  selectedDays = [],  
+  onSelectDay,       
   backgroundColor = "#FFF",
   borderColor = "#A0D2EB",
   borderRadius = 20,
@@ -22,10 +22,8 @@ const DaySelector = ({
 
   const toggleDay = (day) => {
     if (selectedDays.includes(day)) {
-      // Remover o dia selecionado
       onSelectDay(selectedDays.filter((d) => d !== day));
     } else {
-      // Adicionar o dia selecionado
       onSelectDay([...selectedDays, day]);
     }
   };
@@ -40,7 +38,7 @@ const DaySelector = ({
               styles.dayButton,
               selectedDays.includes(day.value) && styles.selectedButton,
             ]}
-            onPress={() => toggleDay(day.value)} // Chama a função quando o botão é pressionado
+            onPress={() => toggleDay(day.value)} 
           >
             <Text style={styles.dayText}>{day.label}</Text>
           </TouchableOpacity>

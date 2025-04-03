@@ -69,7 +69,7 @@ const DateSelector = ({
 
 const styles = StyleSheet.create({
   input: {
-    borderWidth: 1,
+    borderWidth: 3,
     paddingLeft: 15,
     marginBottom: 20,
     alignItems: "center",

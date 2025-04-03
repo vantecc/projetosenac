@@ -1,6 +1,6 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
-
+  
 const BasicButton = ({
   title,
   width,
@@ -24,6 +24,7 @@ const BasicButton = ({
   );
 };
 
+
 const styles = StyleSheet.create({
   button: {
     borderRadius: 20,
@@ -37,6 +38,7 @@ const styles = StyleSheet.create({
     elevation: 6,
   },
   buttonText: {
+    fontFamily: 'Poppins-Bold, sans-serif',
     fontSize: 24,
     fontWeight: "bold",
     textShadowColor: "rgba(0, 0, 0, 0.2)",
