@@ -13,6 +13,7 @@ import BasicButton from "../../components/BasicButton";
 import BasicInput from "../../components/BasicInput";
 import DateSelector from "../../components/DateSelector";
 import DaySelector from "../../components/DaySelector";
+import CategorySelector from "../../components/CategorySelector";
 import styles from "./styles";
 
 
@@ -22,6 +23,12 @@ const Create = () => {
 
   const handleDaySelection = (days) => {
     setSelectedDays(days);
+  };
+
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const handleCategorySelection = (category) => {
+    setSelectedCategory(category);
   };
 
 
@@ -42,10 +49,15 @@ const Create = () => {
                 placeholder="Hábito"
                 backgroundColor="#FFF"
               />
-              <BasicInput
-                placeholder="Categoria"
-                backgroundColor="#FFF"
-              />
+                <CategorySelector
+                  selectedCategory={selectedCategory}
+                  onSelectCategory={handleCategorySelection}
+                  placeholder="Selecione uma categoria"
+                  categories={["Tecnologia", "Saúde", "Educação", "Finanças", "Esportes", "Música", "Arte"]}
+                  borderRadius={20}
+                  width={300}
+                  height={60}
+                />
               <DateSelector
                 backgroundColor="#FFF" />
               <DaySelector
@@ -54,7 +66,7 @@ const Create = () => {
                 placeholder="Selecione os dias"
               />
               <BasicInput
-                placeholder="Categoria"
+                placeholder="Descrição"
                 backgroundColor="#FFF"
               />
             </View>

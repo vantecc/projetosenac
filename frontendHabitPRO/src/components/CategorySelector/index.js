@@ -1,36 +1,28 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Modal, Platform } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Modal } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const DaySelector = ({
-  selectedDays = [],  
-  onSelectDay,       
-  placeholder = "Selecione os dias",
+const CategorySelector = ({
+  selectedCategory = "",  
+  onSelectCategory,       
+  placeholder = "Selecione uma categoria",
+  categories = ["Tecnologia", "Saúde", "Educação", "Finanças", "Esportes", "Música", "Arte"], 
   backgroundColor = "#FFF",
   borderColor = "#5EC9FA",
   borderRadius = 20,
-  width = 300,
-  height = 60,
+  width = 265,
+  height = 45,
   placeholderTextColor = "#B0B0B0",
 }) => {
-  const [showModal, setShowModal] = useState(false); // Controle do Modal
-  const daysOfWeek = [
-    { label: "Dom", value: "Sunday" },
-    { label: "Seg", value: "Monday" },
-    { label: "Ter", value: "Tuesday" },
-    { label: "Qua", value: "Wednesday" },
-    { label: "Qui", value: "Thursday" },
-    { label: "Sex", value: "Friday" },
-    { label: "Sáb", value: "Saturday" },
-  ];
+  const [showModal, setShowModal] = useState(false); 
 
-  // Função para alternar a seleção de um dia
-  const toggleDay = (day) => {
-    if (selectedDays.includes(day)) {
-      onSelectDay(selectedDays.filter((d) => d !== day));
+  const toggleCategorySelection = (category) => {
+    if (selectedCategory === category) {
+      onSelectCategory(""); 
     } else {
-      onSelectDay([...selectedDays, day]);
+      onSelectCategory(category);
     }
+    setShowModal(false); 
   };
 
   const toggleModal = () => {
@@ -50,22 +42,26 @@ const DaySelector = ({
             borderRadius,
           },
         ]}
-        onPress={toggleModal} 
+        onPress={() => {
+          if (selectedCategory) {
+            toggleCategorySelection(selectedCategory);
+          } else {
+            toggleModal(); 
+          }
+        }}
       >
         <Text style={styles.text}>
-          {selectedDays.length > 0
-            ? selectedDays.map((day) => daysOfWeek.find(d => d.value === day)?.label).join(", ")
-            : placeholder
-          }
+          {selectedCategory || placeholder} 
         </Text>
         <Icon 
-          name="calendar" 
+          name="tags" 
           size={20} 
           color="#A0D2EB" 
           style={styles.icon} 
         />
       </TouchableOpacity>
 
+   
       <Modal
         animationType="slide"
         transparent={true}
@@ -74,23 +70,23 @@ const DaySelector = ({
       >
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
-            <Text style={styles.modalTitle}>Selecione os dias</Text>
-            <View style={styles.daySelector}>
-              {daysOfWeek.map((day) => (
+            <Text style={styles.modalTitle}>Selecione uma Categoria</Text>
+            <View style={styles.categorySelector}>
+              {categories.map((category) => (
                 <TouchableOpacity
-                  key={day.value}
+                  key={category}
                   style={[
-                    styles.dayButton,
-                    selectedDays.includes(day.value) && styles.selectedButton,
+                    styles.categoryButton,
+                    selectedCategory === category && styles.selectedButton, 
                   ]}
-                  onPress={() => toggleDay(day.value)}
+                  onPress={() => toggleCategorySelection(category)} 
                 >
-                  <Text style={styles.dayText}>{day.label}</Text>
+                  <Text style={styles.categoryText}>{category}</Text>
                 </TouchableOpacity>
               ))}
             </View>
             <TouchableOpacity style={styles.saveButton} onPress={toggleModal}>
-              <Text style={styles.saveText}>Salvar</Text>
+              <Text style={styles.saveText}>Fechar</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -126,7 +122,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backgroundColor: "rgba(0, 0, 0, 0.5)", 
   },
   modalContent: {
     width: 300,
@@ -140,23 +136,27 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 15,
   },
-  daySelector: {
-    justifyContent: "center",
+  categorySelector: {
+    flexDirection: "column",
+    alignItems: "center",
     marginBottom: 20,
   },
-  dayButton: {
+  categoryButton: {
     paddingVertical: 10,
     paddingHorizontal: 20,
+    alignItems:"center",
     margin: 5,
     borderRadius: 10,
     backgroundColor: "#FFF",
     borderWidth: 1,
     borderColor: "#ddd",
+    width: 120,
+    height:50
   },
   selectedButton: {
     backgroundColor: "#A0D2EB",
   },
-  dayText: {
+  categoryText: {
     fontSize: 16,
     color: "#000",
   },
@@ -172,4 +172,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DaySelector;
+export default CategorySelector;

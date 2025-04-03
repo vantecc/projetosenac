@@ -44,15 +44,15 @@ const DateSelector = ({
         ]}
         onPress={showDatePicker}
       >
+        <Text style={styles.text}>
+          {date.toLocaleDateString("pt-BR") || placeholder}
+        </Text>
         <Icon 
           name="calendar" 
           size={20} 
           color="#A0D2EB" 
           style={styles.icon} 
         />
-        <Text style={styles.text}>
-          {date.toLocaleDateString("pt-BR") || placeholder}
-        </Text>
       </TouchableOpacity>
 
       {show && (
@@ -71,6 +71,7 @@ const DateSelector = ({
 const styles = StyleSheet.create({
   input: {
     borderWidth: 3,
+    justifyContent:'space-between',
     paddingLeft: 15,
     marginBottom: 15,
     alignItems: "center",
