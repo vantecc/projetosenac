@@ -34,7 +34,7 @@ const Login = () => {
 
       if (ok) {
         Alert.alert("Sucesso", data.message || "Login realizado com sucesso!");
-        router.replace("/dashboard"); // ✅ redireciona para a dashboard
+        router.replace("/dashboard"); 
       } else {
         Alert.alert("Erro", data.message || "Credenciais inválidas.");
       }
