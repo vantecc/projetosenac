@@ -24,7 +24,6 @@ const DaySelector = ({
     { label: "Sáb", value: "Saturday" },
   ];
 
-  // Função para alternar a seleção de um dia
   const toggleDay = (day) => {
     if (selectedDays.includes(day)) {
       onSelectDay(selectedDays.filter((d) => d !== day));
