@@ -11,14 +11,17 @@ import {
   Keyboard,
   TouchableOpacity
 } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 import styles from './styles';
 import BasicButton from '../../components/BasicButton';
 import BasicInput from '../../components/BasicInput';
 import { loginUser } from "../../services/api";
+import { useRouter } from 'expo-router';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const handleLogin = async () => {
     if (!email || !password) {
@@ -31,6 +34,7 @@ const Login = () => {
 
       if (ok) {
         Alert.alert("Sucesso", data.message || "Login realizado com sucesso!");
+        router.replace("/dashboard"); // ✅ redireciona para a dashboard
       } else {
         Alert.alert("Erro", data.message || "Credenciais inválidas.");
       }
@@ -46,7 +50,6 @@ const Login = () => {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
       >
         <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', paddingBottom: 100 }}>
-
           <View style={styles.container}>
             <Image
               style={styles.logo}
@@ -78,6 +81,29 @@ const Login = () => {
                 height={45}
                 onPress={handleLogin}
               />
+
+              <TouchableOpacity
+                onPress={() =>
+                  Alert.alert("Atenção", "Funcionalidade de login com Google será implementada futuramente.")
+                }
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: '#fff',
+                  borderRadius: 20,
+                  paddingVertical: 10,
+                  paddingHorizontal: 20,
+                  marginTop: 10,
+                  borderWidth: 1,
+                  borderColor: '#ccc',
+                  width: 265,
+                  height: 45,
+                }}
+              >
+                <AntDesign name="google" size={20} color="#DB4437" style={{ marginRight: 10 }} />
+                <Text style={{ fontSize: 16, color: '#333' }}>Entrar com Google</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </ScrollView>

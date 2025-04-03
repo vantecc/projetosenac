@@ -14,6 +14,10 @@ import styles from "./styles";
 import BasicButton from "../../components/BasicButton";
 import BasicInput from "../../components/BasicInput";
 import { registerUser } from "../../services/api";
+import { AntDesign } from '@expo/vector-icons';
+import { TouchableOpacity } from "react-native";
+
+
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -112,13 +116,37 @@ const Register = () => {
               />
             </View>
             <View style={styles.buttonContainer}>
-              <BasicButton
-                title="Criar Conta"
-                width={265}
-                height={45}
-                onPress={handleRegister}
-              />
-            </View>
+  <BasicButton
+    title="Criar Conta"
+    width={265}
+    height={45}
+    onPress={handleRegister}
+  />
+
+  <TouchableOpacity
+    onPress={() =>
+      Alert.alert("Atenção", "Funcionalidade de login com Google será implementada futuramente.")
+    }
+    style={{
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#fff',
+      borderRadius: 20,
+      paddingVertical: 10,
+      paddingHorizontal: 20,
+      marginTop: 10,
+      borderWidth: 1,
+      borderColor: '#ccc',
+      width: 265,
+      height: 45,
+    }}
+  >
+    <AntDesign name="google" size={20} color="#DB4437" style={{ marginRight: 10 }} />
+    <Text style={{ fontSize: 16, color: '#333' }}>Criar conta com Google</Text>
+  </TouchableOpacity>
+</View>
+
           </ImageBackground>
         </ScrollView>
       </KeyboardAvoidingView>
