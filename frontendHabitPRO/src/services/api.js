@@ -1,5 +1,5 @@
 export async function registerUser({ name, email, password }) {
-  const response = await fetch("http://192.168.0.2:8000/api/register/", {
+  const response = await fetch("http://192.168.137.1:8000/api/register/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -12,7 +12,7 @@ export async function registerUser({ name, email, password }) {
 }
 
 export async function loginUser({ email, password }) {
-  const response = await fetch("http://192.168.0.2:8000/api/login/", {
+  const response = await fetch("http://192.168.137.1:8000/api/login/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
