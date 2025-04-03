@@ -8,16 +8,22 @@ import {
   Keyboard,
   TouchableWithoutFeedback
 } from "react-native";
-import styles from "./styles";
+import React, { useState } from "react";
 import BasicButton from "../../components/BasicButton";
 import BasicInput from "../../components/BasicInput";
 import DateSelector from "../../components/DateSelector";
 import DaySelector from "../../components/DaySelector";
+import styles from "./styles";
 
 
 const Create = () => {
 
-  
+  const [selectedDays, setSelectedDays] = useState([]);
+
+  const handleDaySelection = (days) => {
+    setSelectedDays(days);
+  };
+
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -42,14 +48,22 @@ const Create = () => {
               />
               <DateSelector
                 backgroundColor="#FFF" />
-                <DaySelector/>
+              <DaySelector
+                selectedDays={selectedDays}
+                onSelectDay={handleDaySelection}
+                placeholder="Selecione os dias"
+              />
+              <BasicInput
+                placeholder="Categoria"
+                backgroundColor="#FFF"
+              />
             </View>
             <View style={styles.buttonContainer}>
               <BasicButton
                 title="Salvar"
                 textColor="#fff"
-                width={265}
-                height={45}
+                width={255}
+                height={55}
               />
             </View>
           </ImageBackground>

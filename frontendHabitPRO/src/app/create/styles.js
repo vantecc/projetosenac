@@ -12,6 +12,7 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
+    
   },
   buttonContainer: {
     flex: 0.6,

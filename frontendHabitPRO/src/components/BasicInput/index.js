@@ -9,8 +9,8 @@ const CustomInput = ({
   backgroundColor = "#BCE5FA",
   borderColor = "#5EC9FA",
   borderRadius = 20,
-  width = 265,
-  height = 45,
+  width = 300,
+  height = 60,
   placeholderTextColor = "#B0B0B0",
 }) => {
   return (

@@ -10,8 +10,8 @@ const DateSelector = ({
   backgroundColor = "#FFF",
   borderColor = "#5EC9FA",
   borderRadius = 20,
-  width = 265,
-  height = 45,
+  width = 300,
+  height = 60,
   placeholderTextColor = "#B0B0B0",
 }) => {
   const [show, setShow] = useState(false);
@@ -39,6 +39,7 @@ const DateSelector = ({
             width,
             height,
             borderRadius,
+            placeholderTextColor
           },
         ]}
         onPress={showDatePicker}
@@ -71,10 +72,10 @@ const styles = StyleSheet.create({
   input: {
     borderWidth: 3,
     paddingLeft: 15,
-    marginBottom: 20,
+    marginBottom: 15,
     alignItems: "center",
     flexDirection: "row",
-    height: 45,
+    height: 60,
     borderRadius: 20,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 },
