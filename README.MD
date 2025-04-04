@@ -8,11 +8,6 @@
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Instalação](#instalação)
-- [Como Usar](#como-usar)
-- [Próximos Passos](#próximos-passos)
-- [Autores](#autores)
-- [Licença](#licença)
-
 ---
 
 ## Sobre o Projeto
