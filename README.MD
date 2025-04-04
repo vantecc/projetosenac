@@ -54,6 +54,7 @@ Nosso foco é oferecer uma experiência personalizada para o usuário, permitind
 ---
 
 ### Frontend
+
 ```bash
 git clone https://github.com/vantecc/projetosenac.git
 cd projetosenac
@@ -61,6 +62,7 @@ npm install
 npx expo start
 
 ### Backend
+
 cd backend
 pip install -r requirements.txt
 python manage.py migrate
