@@ -58,6 +58,8 @@ cd projetosenac
 npm install
 npx expo start
 
+---
+
 ### Backend
 cd backend
 pip install -r requirements.txt
