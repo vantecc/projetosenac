@@ -51,8 +51,6 @@ Nosso foco é oferecer uma experiência personalizada para o usuário, permitind
 - Python 3.x
 - Django
 
----
-
 ### Frontend
 
 ```bash
