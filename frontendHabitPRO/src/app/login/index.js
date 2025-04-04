@@ -17,6 +17,7 @@ import BasicButton from '../../components/BasicButton';
 import BasicInput from '../../components/BasicInput';
 import { loginUser } from "../../services/api";
 import { useRouter } from 'expo-router';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -33,8 +34,12 @@ const Login = () => {
       const { ok, data } = await loginUser({ email, password });
 
       if (ok) {
+
+        await AsyncStorage.setItem('user', JSON.stringify(data.user));
+
+
         Alert.alert("Sucesso", data.message || "Login realizado com sucesso!");
-        router.replace("/dashboard"); 
+        router.replace("/dashboard");
       } else {
         Alert.alert("Erro", data.message || "Credenciais inválidas.");
       }
