@@ -61,9 +61,7 @@ def register_user(request):
 
 @csrf_exempt
 @api_view(['POST'])
-
 def login_user(request):
-
     data = request.data
     email = data.get("email")
     password = data.get("password")
@@ -71,6 +69,14 @@ def login_user(request):
     user = authenticate(username=email, password=password)
 
     if user is not None:
-        return Response({"message": "Login realizado com sucesso."}, status=status.HTTP_200_OK)
+        return Response({
+            "message": "Login realizado com sucesso.",
+            "user": {
+                "id": user.id,
+                "name": user.first_name,
+                "email": user.email
+            }
+        }, status=status.HTTP_200_OK)
     else:
         return Response({"message": "Credenciais inválidas."}, status=status.HTTP_401_UNAUTHORIZED)
+
