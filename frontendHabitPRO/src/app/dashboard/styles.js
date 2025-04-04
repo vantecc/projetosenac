@@ -7,6 +7,10 @@ export default StyleSheet.create({
     justifyContent: "flex-start",
     padding: 15,
   },
+  scrollContent: {
+    paddingBottom: 150, // espaço extra para o footer fixo
+    width: '100%',
+  },
   inputContainer: {
     alignItems: "center",
     justifyContent: "flex-start",
@@ -43,7 +47,6 @@ export default StyleSheet.create({
     textShadowOffset: { width: 2, height: 2 },
     textShadowRadius: 4,
   },
-
   userGreetingBox: {
     backgroundColor: '#A0D2EB',
     paddingVertical: 8,
@@ -59,14 +62,12 @@ export default StyleSheet.create({
     minWidth: 180,
     height: 50,
   },
-  
   userGreetingText: {
     color: 'rgba(255, 255, 255, 0.9)',
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  
   footer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -85,17 +86,14 @@ export default StyleSheet.create({
     bottom: 0,
     width: '100%',
   },
-
   footerItem: {
     alignItems: 'center',
   },
-
   footerText: {
     fontSize: 20,
     color: '#333',
     marginTop: 2,
   },
-
   plusButton: {
     backgroundColor: '#A0D2EB',
     width: 60,
@@ -110,7 +108,6 @@ export default StyleSheet.create({
     shadowRadius: 4,
     elevation: 8,
   },
-
   habitCard: {
     backgroundColor: '#fff',
     padding: 15,
@@ -143,7 +140,13 @@ export default StyleSheet.create({
     color: '#777',
     marginTop: 4,
   },
-  
-
-
+  habitHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  iconGroup: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
 });
