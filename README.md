@@ -4,10 +4,11 @@
 
 ## Índice
 
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Funcionalidades](#funcionalidades)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Instalação](#instalação)
+- [Sobre o Projeto](https://www.notion.so/1cb0193c737c80acbb3ed97af13b6526?pvs=21)
+- [Funcionalidades](https://www.notion.so/1cb0193c737c80acbb3ed97af13b6526?pvs=21)
+- [Tecnologias Utilizadas](https://www.notion.so/1cb0193c737c80acbb3ed97af13b6526?pvs=21)
+- [Instalação](https://www.notion.so/1cb0193c737c80acbb3ed97af13b6526?pvs=21)
+
 ---
 
 ## Sobre o Projeto
@@ -32,11 +33,13 @@ Nosso foco é oferecer uma experiência personalizada para o usuário, permitind
 ## Tecnologias Utilizadas
 
 ### Frontend
+
 - **React Native** (com Expo)
 - **JavaScript**
 - **Styled Components**
 
 ### Backend
+
 - **Python**
 - **Django Rest Framework**
 - **SQLite3** (banco de dados local)
@@ -46,6 +49,7 @@ Nosso foco é oferecer uma experiência personalizada para o usuário, permitind
 ## Instalação
 
 ### Requisitos
+
 - Node.js e npm
 - Expo CLI
 - Python 3.x
@@ -54,10 +58,11 @@ Nosso foco é oferecer uma experiência personalizada para o usuário, permitind
 ### Frontend
 
 ```bash
-git clone https://github.com/vantecc/projetosenac.git
+git clone <https://github.com/vantecc/projetosenac.git>
 cd projetosenac
 npm install
 npx expo start
+```
 
 ### Backend
 
@@ -66,3 +71,4 @@ cd backend
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
+```

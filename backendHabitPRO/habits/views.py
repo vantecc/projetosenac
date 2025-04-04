@@ -17,8 +17,8 @@ class HabitViewSet(viewsets.ModelViewSet):
     queryset = Habit.objects.all()
     serializer_class = HabitSerializer
 
-    def get_queryset(self):
-        return self.queryset.filter(user=self.request.user)
+    # def get_queryset(self):
+    #     return self.queryset.filter(user=self.request.user)
 
 class CheckInViewSet(viewsets.ModelViewSet):
     queryset = CheckIn.objects.all()
