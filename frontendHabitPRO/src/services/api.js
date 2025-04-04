@@ -32,10 +32,16 @@ export async function createHabit(data) {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data), // Não incluir o campo 'user' aqui
+    body: JSON.stringify(data),
   });
 
   const result = await response.json();
   return { ok: response.ok, data: result };
+}
+
+export async function getHabits() {
+  const response = await fetch("http://192.168.0.2:8000/api/habits/");
+  const data = await response.json();
+  return { ok: response.ok, data };
 }
 

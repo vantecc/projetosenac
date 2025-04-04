@@ -4,24 +4,24 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     padding: 15,
   },
   inputContainer: {
-    flex: 0.6,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     width: "100%",
+    marginBottom: 100,
   },
   buttom: {
     height: 90,
     width: 90
   },
   user: {
-    flex: 0.6,
     flexDirection: 'row',
     justifyContent: "space-between",
     width: "100%",
+    marginBottom: 20,
   },
   buttonContainer: {
     flex: 0.6,
@@ -67,57 +67,83 @@ export default StyleSheet.create({
     textAlign: 'center',
   },
   
-footer: {
-  flexDirection: 'row',
-  justifyContent: 'space-around',
-  alignItems: 'center',
-  backgroundColor: '#fff',
-  paddingTop: 10,
-  paddingBottom: 25,
-  borderTopLeftRadius: 20,
-  borderTopRightRadius: 20,
-  shadowColor: '#000',
-  shadowOffset: { width: 0, height: -2 },
-  shadowOpacity: 0.1,
-  shadowRadius: 4,
-  elevation: 10,
-  position: 'absolute',
-  bottom: 0,
-  width: '100%',
-},
+  footer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    paddingTop: 10,
+    paddingBottom: 25,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: -2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 10,
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+  },
 
-footerItem: {
-  alignItems: 'center',
-},
+  footerItem: {
+    alignItems: 'center',
+  },
 
-footerText: {
-  fontSize: 20,
-  color: '#333',
-  marginTop: 2,
-},
+  footerText: {
+    fontSize: 20,
+    color: '#333',
+    marginTop: 2,
+  },
 
-plusButton: {
-  backgroundColor: '#A0D2EB',
-  width: 60,
-  height: 60,
-  borderRadius: 30,
-  alignItems: 'center',
-  justifyContent: 'center',
-  marginBottom: 30,
-  shadowColor: '#000',
-  shadowOffset: { width: 0, height: 4 },
-  shadowOpacity: 0.3,
-  shadowRadius: 4,
-  elevation: 8,
-},
+  plusButton: {
+    backgroundColor: '#A0D2EB',
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 30,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4,
+    elevation: 8,
+  },
 
-
-
-
-
-
-
-
+  habitCard: {
+    backgroundColor: '#fff',
+    padding: 15,
+    marginBottom: 12,
+    borderRadius: 16,
+    width: '100%',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    elevation: 3,
+  },
+  habitTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  habitDescription: {
+    fontSize: 14,
+    color: '#666',
+    marginTop: 4,
+  },
+  habitTime: {
+    fontSize: 13,
+    color: '#555',
+    marginTop: 6,
+  },
+  habitLocation: {
+    fontSize: 13,
+    color: '#777',
+    marginTop: 4,
+  },
+  
 
 
 });
